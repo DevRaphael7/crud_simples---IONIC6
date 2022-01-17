@@ -1,0 +1,15 @@
+.input-container{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    
+    ion-input{
+        min-width: 300px;
+    }
+
+    ion-button{
+        margin: 10px;
+        padding: 10px;
+        min-height: 60px;
+    }
+}

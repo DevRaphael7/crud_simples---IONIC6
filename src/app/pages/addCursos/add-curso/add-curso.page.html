@@ -1,0 +1,23 @@
+<app-back-button title="Adicionar curso"></app-back-button>
+
+<ion-content>
+  
+  <app-photo-container></app-photo-container>
+
+  <div class="form-container">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input placeholder="Seu nome" [(ngModel)]="txtNome" clearInput="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input placeholder="Preço" [(ngModel)]="txtPreco" clearInput="true" (ionChange)="mascaraPreco($event)" maxlength="6"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  
+  <div class="center">
+    <ion-button class="add-btn" (click)="adicionarCurso()"><ion-icon name="add"></ion-icon>   Adicionar</ion-button>
+  </div>
+</ion-content>

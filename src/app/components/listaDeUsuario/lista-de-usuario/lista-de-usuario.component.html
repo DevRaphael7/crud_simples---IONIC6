@@ -1,0 +1,29 @@
+<ion-list class="list-user-style">
+  <div *ngIf="!eObjeto">
+    <ion-item *ngFor="let item of listaDeUsuarios | async" [style.margin-bottom]=" 10 + 'px' ">
+      <ion-avatar slot="start">
+        <ion-img [src]="item.avatarImg"></ion-img>
+      </ion-avatar>
+      <div> 
+        <ion-label [style.font-size]=" 20 + 'px' ">{{item.name}}</ion-label>
+        <p class="email">{{item.email}}</p>
+        <p class="date">{{item.dataDeNascimento}}</p>
+      </div>
+      <ion-icon name="trash" (click)="apagarUsuario(item.id)" slot="end" color="danger"></ion-icon>
+    </ion-item>
+  </div>
+  <div *ngIf="eObjeto">
+    <ion-item *ngFor="let item of listaDeUsuariosObjeto" [style.margin-bottom]=" 10 + 'px' ">
+      <ion-avatar slot="start">
+        <ion-img [src]="item.avatarImg"></ion-img>
+      </ion-avatar>
+      <div> 
+        <ion-label [style.font-size]=" 20 + 'px' ">{{item.name}}</ion-label>
+        <p class="email">{{item.email}}</p>
+        <p class="date">{{item.dataDeNascimento}}</p>
+      </div>
+    </ion-item>
+  </div>
+</ion-list>
+
+<p>{{ teste }}</p>

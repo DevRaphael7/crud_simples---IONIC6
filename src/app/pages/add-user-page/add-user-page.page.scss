@@ -1,0 +1,31 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    padding: 25px;
+
+    ion-item{
+
+        ion-input{
+            overflow: hidden;
+            border: none;
+        }
+    }
+}
+
+.sumPriceStyle{
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+}
+
+.add-btn{
+    padding: 10px;
+    height: 70px;
+}
+
+.action-sheet-style{
+    color: red;
+}

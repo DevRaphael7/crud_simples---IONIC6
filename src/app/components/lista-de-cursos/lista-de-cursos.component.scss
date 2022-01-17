@@ -1,0 +1,31 @@
+.grid-container{
+
+    ion-row{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+
+        .card-curso{
+            display: grid;
+            width: 150px;
+            min-height: 190px;
+
+            ion-img {
+                justify-content: center;
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+
+            }
+
+            ion-card-subtitle{
+                margin-top: 2px;
+            }
+
+            ion-card-title{
+                padding-top: 10px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+    }
+}

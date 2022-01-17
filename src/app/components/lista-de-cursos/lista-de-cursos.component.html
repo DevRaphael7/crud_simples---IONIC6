@@ -1,0 +1,13 @@
+<ion-grid class="grid-container">
+  <ion-row>
+    <ion-col *ngFor="let item of listaDeCursos | async">
+      <ion-card class="card-curso" (click)="goToDetailPage(item.id)">
+        <ion-card-header>
+          <ion-img [src]="item.img"></ion-img>
+          <ion-card-subtitle>R$ {{converterPrecoParaFormatoBrasileiro(item.preco)}}</ion-card-subtitle>
+          <ion-card-title>{{item.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

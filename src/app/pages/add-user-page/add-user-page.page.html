@@ -1,0 +1,38 @@
+<app-back-button title="Adicionar usuário"></app-back-button>
+
+<ion-content>
+
+  <app-photo-container></app-photo-container>
+
+  <div class="form-container">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input placeholder="Seu nome" [(ngModel)]="txtNome" clearInput="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input placeholder="Seu email" [(ngModel)]="txtEmail" clearInput="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Data</ion-label>
+        <ion-input (ionChange)="dateMaskInput($event)" [(ngModel)]="txtDateUser" maxlength="10" placeholder="Data de nascimento" clearInput="true" inputmode="numeric"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Curso</ion-label>
+        <ion-select placeholder="Seleciona um curso" multiple="true" [(ngModel)]="txtCursos" (ionBlur)="totalAPagar()">
+          <ion-select-option *ngFor="let item of cursos$ | async" [value]="item.id">{{item.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="center">
+    <ion-label class="sumPriceStyle">Total a pagar: {{total}}</ion-label>
+  </div>
+  
+  <div class="center">
+    <ion-button class="add-btn" (click)="adicionarUsuario()"><ion-icon name="person-add-sharp"></ion-icon>   Adicionar</ion-button>
+  </div>
+
+</ion-content>

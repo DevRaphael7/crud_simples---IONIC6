@@ -1,0 +1,46 @@
+.center{
+    display: grid;
+    justify-content: center;
+}
+
+.img-container{
+    display: flex;
+    padding: 10px;
+
+    img{
+        width: 140px;
+        height: 160px;
+        object-fit: cover;
+        margin: 0 10px;
+    }
+
+    ion-label{
+        font-size: 18px;
+        font-weight: 300;
+    }
+}
+
+.btn-add-container{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+    ion-button{
+        position: absolute;
+        min-width: 80%;
+        animation-name: btn;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes btn{
+    from{
+        opacity: 0;
+        left: -10%;
+    }to {
+        opacity: 1;
+        left: 10%;
+    }
+}

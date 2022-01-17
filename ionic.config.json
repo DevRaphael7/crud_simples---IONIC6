@@ -1,0 +1,7 @@
+{
+  "name": "cadUsuario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
