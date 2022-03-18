@@ -15,6 +15,7 @@ import { ReduxServiceService } from './services/reduxService/redux-service.servi
 import { PaginaUsuarioPage } from './tabs/pagina-usuario/pagina-usuario.page';
 import { ComponentsModule } from './components/components.module';
 import { avatarImgReducer } from './redux/reducer/avatarImg.reducer';
+import { pesquisaReducer } from './redux/reducer/pesquisa.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { avatarImgReducer } from './redux/reducer/avatarImg.reducer';
     StoreModule.forRoot({
       users: userReducer,
       cursos: cursoReducer,
-      img: avatarImgReducer
+      img: avatarImgReducer,
+      pesquisaUsuario: pesquisaReducer,
     }),
     StoreDevtoolsModule.instrument(),
     ComponentsModule

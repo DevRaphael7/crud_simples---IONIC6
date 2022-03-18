@@ -10,7 +10,7 @@ const _userReducer = createReducer(
     estadoInicial,
     on(actions.addUser, (state, action) => { return [...state, action.payload] }),
     on(actions.delUser, (state, action) => { return state = state.filter(value => value.id != action.payload)}),
-    on(actions.updateCurso, (state, action) => { return state = action.payload })
+    on(actions.updateUser, (state, action) => { return state = action.payload })
 )
 
 export function userReducer(state: User[] = usersData, action: Action) {

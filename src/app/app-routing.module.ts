@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'detail/:id',
     loadChildren: () => import('./pages/DetailPage/detail/detail.module').then( m => m.DetailPageModule)
   },
+  {
+    path: `edit-user/:id`,
+    loadChildren: () => import('./pages/EditUser/edit-user/edit-user.module').then( m => m.EditUserPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -72,26 +72,22 @@ export class DetailPage implements OnInit {
   }
 
   pesquisarUsuarios() {
-    let newSearchState: User[] = [];
+    const newSearchState: User[] = [];
     this.redux.getUsers().pipe().subscribe(value => {
       value.map(usuario => {
         usuario.cursos.map(idCurso => {
           if(idCurso === this.getIdParam()){
-            newSearchState.push(usuario)
+            newSearchState.push(usuario);
           }
-        })
-      })
+        });
+      });
     });
 
     // console.log(newSearchState)
 
-    this.redux.adicionarPesquisa(newSearchState)
+    this.redux.adicionarPesquisa(newSearchState);
 
-    this.redux.getSearch().pipe().subscribe(value => {
-      console.log(value)
-    });
-
-    return this.redux.getUsers()
+    return this.redux.getSearch();
   }
 
 }

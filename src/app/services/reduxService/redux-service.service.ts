@@ -84,7 +84,7 @@ export class ReduxServiceService {
 
   atualizarUsuario(newState: User[]) {
     this.store.dispatch({
-      type: 'Upd user-curso',
+      type: 'Upd user',
       payload: newState
     });
   }

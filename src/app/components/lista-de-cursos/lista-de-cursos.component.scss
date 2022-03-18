@@ -1,9 +1,9 @@
 .grid-container{
-
     ion-row{
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
         .card-curso{
             display: grid;
             width: 150px;

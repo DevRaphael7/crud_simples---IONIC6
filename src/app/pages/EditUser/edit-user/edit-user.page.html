@@ -1,0 +1,24 @@
+<app-back-button title="Editar usuário"></app-back-button> 
+
+<ion-content padding>
+
+  <app-photo-container></app-photo-container>
+
+  <div class="form-container">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input placeholder="Seu nome" [(ngModel)]="nome" clearInput="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input placeholder="Email" [(ngModel)]="email" clearInput="true"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="center">
+    <ion-button class="add-btn" (click)="atualizarUsuario()"><ion-icon name="person-add-sharp"></ion-icon>   Adicionar</ion-button>
+  </div>
+
+</ion-content>

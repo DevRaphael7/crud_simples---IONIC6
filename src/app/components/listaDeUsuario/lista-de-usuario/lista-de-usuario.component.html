@@ -9,7 +9,7 @@
         <p class="email">{{item.email}}</p>
         <p class="date">{{item.dataDeNascimento}}</p>
       </div>
-      <ion-icon name="pencil-outline" (click)="atualizarUsuario(item.id)" slot="end" color="danger"></ion-icon>
+      <ion-icon name="pencil-outline" (click)="goToEditUserPage(item.id)" slot="end" color="danger"></ion-icon>
       <ion-icon name="trash" (click)="apagarUsuario(item.id)" slot="end" color="danger"></ion-icon>
     </ion-item>
   </div>
