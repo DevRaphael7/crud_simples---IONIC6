@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">  
-      <ion-button color="light" (click)="backButton()">
-        <ion-icon name="chevron-back-sharp"></ion-icon>
+    <ion-buttons [slot]="slotButton">  
+      <ion-button color="light" (click)="buttonEvent()">
+        <ion-icon [name]="iconName"></ion-icon>
       </ion-button>   
     </ion-buttons>  
-    <ion-title>{{title}}</ion-title>
+    <ion-title>{{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>

@@ -10,7 +10,9 @@ import { ReduxServiceService } from 'src/app/services/reduxService/redux-service
   styleUrls: ['./lista-de-usuario.component.scss'],
 })
 export class ListaDeUsuarioComponent implements OnInit {
+
   @Input() listaDeUsuarios: Observable<User[]> = this.redux.getUsers();
+  @Input() title: string = 'Usuários';
 
   constructor(
     private redux: ReduxServiceService,

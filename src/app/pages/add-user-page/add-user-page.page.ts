@@ -1,7 +1,7 @@
+import { InputForm } from './../../../interface/input';
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { MaskPipe } from 'ngx-mask';
 import { Observable } from 'rxjs';
 import { Curso } from 'src/app/redux/models/curso.mode';
 import { User } from 'src/app/redux/models/usuario.model';
@@ -24,13 +24,22 @@ export class AddUserPagePage implements OnInit {
   public txtEmail: string;
   public txtCursos: number[];
   public total: string;
+  public formulario: Array<InputForm>;
 
   constructor(
-    @Inject(Router) private router: Router, 
-    public maskPipe: MaskPipe, 
+    @Inject(Router) private router: Router,  
     private redux: ReduxServiceService, 
     public alertController: AlertController
-    ){ }
+    ){ 
+      this.formulario = [
+        {
+          mascara: '',
+          placeholderValue: 'Seu nome',
+          temMascara: false,
+          titulo: 'Nome'
+        }
+      ];
+    }
 
   ngOnInit() {
     this.txtDateUser = '';
@@ -50,15 +59,6 @@ export class AddUserPagePage implements OnInit {
     });
 
     await alert.present();
-  }
-
-  dateMaskInput(event) {
-    if(this.txtDateUser.length > 10){
-      this.txtDateUser = this.txtDateUser.slice(0, 10);
-      return;
-    }
-
-    this.txtDateUser = this.maskPipe.transform(event.currentTarget.value , '00/00/0000');
   }
 
   idIncremental() {

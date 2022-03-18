@@ -1,3 +1,5 @@
+import { FormComponent } from './Form/form/form.component';
+
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,6 +9,7 @@ import { PhotoContainerComponent } from './photoContainer/photo-container/photo-
 import { BackButtonComponent } from './backButtonHeader/back-button/back-button.component';
 import { InputItemComponent } from './inputItem/input-item/input-item.component';
 import { AddUserPromptComponent } from './addUserPrompt/add-user-prompt/add-user-prompt.component';
+import { InputFormComponent } from './inputForm/input-form/input-form.component';
 
 
 
@@ -17,7 +20,9 @@ import { AddUserPromptComponent } from './addUserPrompt/add-user-prompt/add-user
     PhotoContainerComponent,
     BackButtonComponent,
     InputItemComponent,
-    AddUserPromptComponent
+    AddUserPromptComponent,
+    InputFormComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +34,9 @@ import { AddUserPromptComponent } from './addUserPrompt/add-user-prompt/add-user
     PhotoContainerComponent,
     BackButtonComponent,
     InputItemComponent,
-    AddUserPromptComponent
+    AddUserPromptComponent,
+    InputFormComponent,
+    FormComponent
   ]
 })
 export class ComponentsModule { }

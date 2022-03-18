@@ -1,15 +1,10 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="end">  
-      <ion-button color="light" (click)="goToAddUser()">
-        <ion-icon name="person-add-sharp"></ion-icon>
-      </ion-button>   
-    </ion-buttons> 
-    <ion-title>Lista de usuários</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-back-button 
+  title="Lista de usuários" 
+  [route]="'add-user-page'" 
+  slotButton="end" 
+  iconName="person-add-sharp"
+  ></app-back-button> 
 
 <ion-content>
-  <h1>Usuários</h1>
   <app-lista-de-usuario></app-lista-de-usuario>
 </ion-content>
