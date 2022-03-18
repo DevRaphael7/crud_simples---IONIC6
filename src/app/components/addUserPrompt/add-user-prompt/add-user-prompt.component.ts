@@ -30,7 +30,7 @@ export class AddUserPromptComponent implements OnInit {
 
   atualizarUsuario() {
     console.log(this.txtEmail);
-    this.redux.atualizarUsuario(this.txtEmail, this.id);
+    this.redux.atualizarUsuario([]);
   }
 
 }

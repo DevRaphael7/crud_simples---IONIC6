@@ -34,7 +34,6 @@ export class DetailPage implements OnInit {
   }
 
   getCursoById(){
-
     const dados = this.redux.retornarCursoConvertido().find(value => value.id === this.getIdParam());
 
     if(!dados){
@@ -70,6 +69,29 @@ export class DetailPage implements OnInit {
     });
 
     return await modalPage.present();
+  }
+
+  pesquisarUsuarios() {
+    let newSearchState: User[] = [];
+    this.redux.getUsers().pipe().subscribe(value => {
+      value.map(usuario => {
+        usuario.cursos.map(idCurso => {
+          if(idCurso === this.getIdParam()){
+            newSearchState.push(usuario)
+          }
+        })
+      })
+    });
+
+    // console.log(newSearchState)
+
+    this.redux.adicionarPesquisa(newSearchState)
+
+    this.redux.getSearch().pipe().subscribe(value => {
+      console.log(value)
+    });
+
+    return this.redux.getUsers()
   }
 
 }

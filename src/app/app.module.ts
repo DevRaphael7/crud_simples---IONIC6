@@ -17,7 +17,7 @@ import { ComponentsModule } from './components/components.module';
 import { avatarImgReducer } from './redux/reducer/avatarImg.reducer';
 
 @NgModule({
-  declarations: [AppComponent, PaginaUsuarioPage],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     NgxMaskModule.forRoot(),
@@ -30,6 +30,6 @@ import { avatarImgReducer } from './redux/reducer/avatarImg.reducer';
     ComponentsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, OpenCameraService, ReduxServiceService],
-  bootstrap: [AppComponent, PaginaUsuarioPage],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

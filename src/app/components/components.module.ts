@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListaDeUsuarioComponent } from './listaDeUsuario/lista-de-usuario/lista-de-usuario.component';
@@ -19,7 +20,8 @@ import { AddUserPromptComponent } from './addUserPrompt/add-user-prompt/add-user
     AddUserPromptComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule.forRoot({})
   ],
   exports: [
     ListaDeUsuarioComponent,

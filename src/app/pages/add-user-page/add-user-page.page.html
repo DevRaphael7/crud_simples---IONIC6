@@ -20,7 +20,7 @@
       </ion-item>
       <ion-item>
         <ion-label>Curso</ion-label>
-        <ion-select placeholder="Seleciona um curso" multiple="true" [(ngModel)]="txtCursos" (ionBlur)="totalAPagar()">
+        <ion-select placeholder="Seleciona um curso" multiple="true" [(ngModel)]="txtCursos" (ionChange)="totalAPagar()">
           <ion-select-option *ngFor="let item of cursos$ | async" [value]="item.id">{{item.name}}</ion-select-option>
         </ion-select>
       </ion-item>
