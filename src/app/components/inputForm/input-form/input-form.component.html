@@ -1,7 +1,10 @@
-<ion-item>
+<ion-item color="none">
   <ion-label position="floating">{{titulo}}</ion-label>
   <ion-input 
     [placeholder]="placeholderValue" 
-    (keyup)="enviarDadosCompPai($event)" 
-    clearInput="true"></ion-input>
+    (ionChange)="enviarDadosCompPai($event)"
+    clearInput="true"
+    [(ngModel)]="valorInput"
+    [maxlength]="tamanhoMaximo"
+    ></ion-input>
 </ion-item>

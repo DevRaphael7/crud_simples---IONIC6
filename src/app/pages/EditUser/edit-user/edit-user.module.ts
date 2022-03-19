@@ -8,6 +8,7 @@ import { EditUserPageRoutingModule } from './edit-user-routing.module';
 
 import { EditUserPage } from './edit-user.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { MaskPipe } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     EditUserPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [EditUserPage]
+  declarations: [EditUserPage],
+  providers: [MaskPipe]
 })
 export class EditUserPageModule {}

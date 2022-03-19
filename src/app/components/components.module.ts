@@ -1,3 +1,6 @@
+import { ButtonCenterComponent } from './ButtonCenter/button-center/button-center.component';
+import { SelectComponent } from './Select/select/select.component';
+import { FormsModule } from '@angular/forms';
 import { FormComponent } from './Form/form/form.component';
 
 import { IonicModule } from '@ionic/angular';
@@ -22,11 +25,14 @@ import { InputFormComponent } from './inputForm/input-form/input-form.component'
     InputItemComponent,
     AddUserPromptComponent,
     InputFormComponent,
-    FormComponent
+    FormComponent,
+    SelectComponent,
+    ButtonCenterComponent
   ],
   imports: [
     CommonModule,
-    IonicModule.forRoot({})
+    IonicModule.forRoot({}),
+    FormsModule
   ],
   exports: [
     ListaDeUsuarioComponent,
@@ -36,7 +42,9 @@ import { InputFormComponent } from './inputForm/input-form/input-form.component'
     InputItemComponent,
     AddUserPromptComponent,
     InputFormComponent,
-    FormComponent
+    FormComponent,
+    SelectComponent,
+    ButtonCenterComponent
   ]
 })
 export class ComponentsModule { }

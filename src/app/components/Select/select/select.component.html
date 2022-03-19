@@ -1,0 +1,6 @@
+<ion-item>
+  <ion-label>{{ title }}</ion-label>
+  <ion-select placeholder="Seleciona um curso" multiple="true" (ionChange)="mandarParaCompPai()" [(ngModel)]="cursos">
+    <ion-select-option *ngFor="let item of lista" [value]="item[key]">{{item[valor]}}</ion-select-option>
+  </ion-select>
+</ion-item>

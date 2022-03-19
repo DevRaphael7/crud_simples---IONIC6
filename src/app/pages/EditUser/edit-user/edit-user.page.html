@@ -1,24 +1,20 @@
 <app-back-button title="Editar usuário" [route]=""></app-back-button> 
 
 <ion-content padding>
-
   <app-photo-container></app-photo-container>
 
   <div class="form-container">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Nome</ion-label>
-        <ion-input placeholder="Seu nome" [(ngModel)]="nome" clearInput="true"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input placeholder="Email" [(ngModel)]="email" clearInput="true"></ion-input>
-      </ion-item>
-    </ion-list>
+    <app-form 
+      [inputs]="formulario" 
+      (enviarParaPai)="receberValoresDoFormulario($event)"
+    ></app-form>
   </div>
 
-  <div class="center">
-    <ion-button class="add-btn" (click)="atualizarUsuario()"><ion-icon name="person-add-sharp"></ion-icon>   Adicionar</ion-button>
-  </div>
+  <app-button-center 
+    (clicked)="atualizarUsuario()" 
+    [espacoTop]="15" 
+    text="Editar"
+    iconName="create-outline"
+  ></app-button-center>
 
 </ion-content>

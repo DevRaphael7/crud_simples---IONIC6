@@ -1,3 +1,4 @@
+import { InputValues } from './input-values';
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { MaskPipe } from 'ngx-mask';
 
@@ -10,10 +11,12 @@ import { MaskPipe } from 'ngx-mask';
 export class InputFormComponent implements OnInit {
 
   @Input() titulo: string = "";
-  @Output() dadosInput = new EventEmitter<string>();
+  @Output() dadosInput = new EventEmitter<InputValues>();
   @Input() placeholderValue: string = 'Valor';
-  @Input() temMascara: boolean = false;
+  @Input() temMascara: boolean = true;
   @Input() mascara: string = '';
+  @Input() tamanhoMaximo: number = 25;
+  @Input() valorInput: string = null;
 
   constructor(public maskPipe: MaskPipe) {}
 
@@ -22,20 +25,24 @@ export class InputFormComponent implements OnInit {
   enviarDadosCompPai(texto) {
     let textoParam: string = texto.target.value;
 
-    if(this.temMascara) {
-      textoParam = this.maskPipe.transform(textoParam , this.mascara);
-      this.dadosInput.emit(textoParam);
-      return;
+    const dados: InputValues = {
+      key: this.titulo,
+      value: textoParam
     }
 
-    this.dadosInput.emit(textoParam);
+    if(this.temMascara) {
+      textoParam = this.maskPipe.transform(textoParam , this.mascara);
+      this.dadosInput.emit(dados);
+      this.valorInput = textoParam;
+      return;
+    }
+    this.dadosInput.emit(dados);
   }
 
-  // dateMaskInput(event) {
-  //   if(this.txtDateUser.length > 10){
-  //     this.txtDateUser = this.txtDateUser.slice(0, 10);
-  //     return;
-  //   }
-  // }
+  ngOnDestroy() {
+    this.valorInput = ""
+  }
+
+
 
 }
