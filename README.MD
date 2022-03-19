@@ -1,8 +1,10 @@
 # Cadastro de usuários e cursos - Angular/Ionic
 
-## Bibliotecas usadas
+## Bibliotecas e metodologias usadas
 
 1) Ngrx (Redux para angular)
+2) localStorageSync - Redux com local Storage
+3) Atomic Design
 
 ## Plugins (Capacitor)
 

@@ -31,6 +31,7 @@
     "@ngrx/store": "^13.0.2",
     "@ngrx/store-devtools": "^13.0.2",
     "ionic-img-viewer": "^2.9.0",
+    "ngrx-store-localstorage": "^13.0.0",
     "ngx-mask": "^13.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

@@ -1,13 +1,13 @@
-<ion-grid class="grid-container">
+<h1>{{ title }}</h1>
+<ion-grid>
   <ion-row>
-    <ion-col *ngFor="let item of listaDeCursos | async">
-      <ion-card class="card-curso" (click)="goToDetailPage(item.id)">
-        <ion-card-header>
-          <ion-img [src]="item.img"></ion-img>
-          <ion-card-subtitle>R$ {{converterPrecoParaFormatoBrasileiro(item.preco)}}</ion-card-subtitle>
-          <ion-card-title>{{item.name}}</ion-card-title>
-        </ion-card-header>
-      </ion-card>
+    <ion-col *ngFor="let item of lista">
+      <app-card-curso 
+        [imagem]="item[keys[0]]" 
+        [subtitleCard]="item[keys[1]]" 
+        [title]="item[keys[2]]"
+        (click)="emitirEvento(item[keys[3]])" 
+      ></app-card-curso>
     </ion-col>
   </ion-row>
 </ion-grid>

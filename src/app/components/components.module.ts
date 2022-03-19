@@ -1,3 +1,4 @@
+import { CardCursoComponent } from './lista-de-cursos/molecula/card-curso/card-curso.component';
 import { ButtonCenterComponent } from './ButtonCenter/button-center/button-center.component';
 import { SelectComponent } from './Select/select/select.component';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +28,8 @@ import { InputFormComponent } from './inputForm/input-form/input-form.component'
     InputFormComponent,
     FormComponent,
     SelectComponent,
-    ButtonCenterComponent
+    ButtonCenterComponent,
+    CardCursoComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { InputFormComponent } from './inputForm/input-form/input-form.component'
     InputFormComponent,
     FormComponent,
     SelectComponent,
-    ButtonCenterComponent
+    ButtonCenterComponent,
+    CardCursoComponent
   ]
 })
 export class ComponentsModule { }

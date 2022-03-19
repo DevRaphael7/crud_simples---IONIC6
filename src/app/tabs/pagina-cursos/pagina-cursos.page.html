@@ -1,17 +1,16 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="end">  
-      <ion-button color="light" (click)="goToAddCursos()">
-        <ion-icon name="hardware-chip-sharp"></ion-icon>
-      </ion-button>   
-    </ion-buttons>  
-    <ion-title>Cursos</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-back-button 
+  title="Lista de Cursos" 
+  [route]="'/add-curso'" 
+  slotButton="end" 
+  iconName="hardware-chip-sharp"
+  ></app-back-button> 
 
 <ion-content>
-  <h1>Cursos</h1>
-  <div class="center">
-    <app-lista-de-cursos></app-lista-de-cursos>
-  </div>
+  <app-lista-de-cursos 
+    [lista]="$listaDeCursos | async"
+    [keys]="keyCursos"
+    title="Cursos"
+    (clicked)="goToDetailPage($event)"
+  ></app-lista-de-cursos>
+
 </ion-content>

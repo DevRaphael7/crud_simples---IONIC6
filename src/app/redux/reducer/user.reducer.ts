@@ -18,9 +18,4 @@ export function userReducer(state: User[] = usersData, action: Action) {
 }
 
 //Obtêm somente o usuário
-export const getUserState = createFeatureSelector<AppState[]>('users');
-
-export const getUser = createSelector(
-    getUserState, 
-    (state: AppState[]) => state
-); 
+export const getUserState = createFeatureSelector<User[]>('users');

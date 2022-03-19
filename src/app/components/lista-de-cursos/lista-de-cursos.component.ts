@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Curso } from 'src/app/redux/models/curso.mode';
@@ -10,21 +10,18 @@ import { ReduxServiceService } from 'src/app/services/reduxService/redux-service
   styleUrls: ['./lista-de-cursos.component.scss'],
 })
 export class ListaDeCursosComponent implements OnInit {
-
-  public listaDeCursos: Observable<Curso[]>;
+  
+  @Input() keys: string[] = [];
+  @Input() lista: Array<any> = [];
+  @Input() title: string = 'Cursos';
+  @Output() clicked = new EventEmitter<string>();
 
   constructor(private redux: ReduxServiceService, public router: Router) { }
 
-  ngOnInit() {
-    this.listaDeCursos = this.redux.getCursos();
-  }
+  ngOnInit() { }
 
-  converterPrecoParaFormatoBrasileiro(preco: number): string {
-    return preco.toFixed(2).replace('.', ',');
-  }
-
-  goToDetailPage(id: number) {
-    this.router.navigate([`detail/${id}`]);
+  emitirEvento(valor: string) {
+    this.clicked.emit(valor);
   }
 
 }

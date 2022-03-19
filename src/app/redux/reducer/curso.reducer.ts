@@ -15,4 +15,4 @@ export function cursoReducer (state: Curso[] = cursoData, action: Action) {
 }
 
 //Obtêm somente os cursos
-export const getCursoState = createFeatureSelector<Curso[]>('curso')
+export const getCursoState = createFeatureSelector<Curso[]>('cursos')

@@ -12,4 +12,4 @@ export function pesquisaReducer(state: User[] = [], action: Action) {
     return _pesquisaReducer(state, action);
 }
 
-export const getPesquisaState = createFeatureSelector<AppState[]>('pesquisaUsuario');
+export const getPesquisaState = createFeatureSelector<User[]>('pesquisaUsuario');
