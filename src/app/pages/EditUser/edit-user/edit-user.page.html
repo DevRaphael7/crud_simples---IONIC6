@@ -3,13 +3,11 @@
 <ion-content padding>
   <app-photo-container></app-photo-container>
 
-  <div class="form-container">
-    <app-form 
-      [inputs]="formulario" 
-      (enviarParaPai)="receberValoresDoFormulario($event)"
-    ></app-form>
-  </div>
-
+  <app-form 
+    [inputs]="formulario" 
+    (enviarParaPai)="receberValoresDoFormulario($event)"
+  ></app-form>
+  
   <app-button-center 
     (clicked)="atualizarUsuario()" 
     [espacoTop]="15" 

@@ -14,6 +14,7 @@ export class EditUserPage implements OnInit {
 
   private usuario: User = null;
   public formulario: Array<InputForm>;
+  public valoresCampos: any;
   public avatarImagem: string;
 
   constructor(
@@ -24,8 +25,7 @@ export class EditUserPage implements OnInit {
     this.buscarUsuario(this.routeParam.snapshot.paramMap.get('id'));
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   buscarUsuario(id: string){
     this.redux.getUsers().pipe().subscribe(value => {
@@ -41,32 +41,32 @@ export class EditUserPage implements OnInit {
     this.redux.getImg().pipe().subscribe(value => this.avatarImagem = value);
     const novaLista: User[] = [];
 
-    // this.usuario = {
-    //   avatarImg: this.avatarImagem,
-    //   cursos: this.usuario.cursos,
-    //   dataDeNascimento: this.usuario.dataDeNascimento,
-    //   email: this.email,
-    //   name: this.nome,
-    //   id: this.usuario.id
-    // };
+    this.redux.getImg().subscribe(value => this.avatarImagem = value);
 
-    // this.redux.getUsers().pipe().subscribe(value => {
-    //   value.map(item => {
-    //     if(item.id !== this.usuario.id){
-    //       novaLista.push(item);
-    //     } else {
-    //       novaLista.push(this.usuario);
-    //     }
-    //   });
-    // });
+    this.usuario = {
+      avatarImg: this.avatarImagem,
+      cursos: this.usuario.cursos,
+      dataDeNascimento: this.usuario.dataDeNascimento,
+      email: this.valoresCampos['E-mail'],
+      name: this.valoresCampos['Nome'],
+      id: this.usuario.id
+    };
 
-    // console.log(novaLista);
+    this.redux.getUsers().pipe().subscribe(value => {
+      value.map(item => {
+        if(item.id !== this.usuario.id){
+          novaLista.push(item);
+        } else {
+          novaLista.push(this.usuario);
+        }
+      });
+    });
 
-    // this.redux.atualizarUsuario(novaLista);
+    this.redux.atualizarUsuario(novaLista);
   }
 
   receberValoresDoFormulario(value: any){
-
+    this.valoresCampos = value;
   }
 
 }

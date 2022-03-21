@@ -10,7 +10,7 @@ import { InputValues } from '../../inputForm/input-form/input-values';
 export class FormComponent implements OnInit {
 
   @Input() inputs: Array<InputForm> = [];
-  @Output() enviarParaPai = new EventEmitter<any>()
+  @Output() enviarParaPai = new EventEmitter<any>();
   @Input() valorInput: string = '';
 
   private dadosDoForm: any = {}
@@ -20,8 +20,8 @@ export class FormComponent implements OnInit {
   ngOnInit() {}
 
   criarJson(valor: InputValues){
-    this.dadosDoForm[valor.key] = valor.value
-    this.enviarParaPai.emit(this.dadosDoForm)
+    this.dadosDoForm[valor.key] = valor.value;
+    this.enviarParaPai.emit(this.dadosDoForm);
   }
 
 }
